@@ -18,7 +18,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        run: mvn -B -T1C de.qaware.maven:go-offline-maven-plugin:resolve-dependencies --file pom.xml
+        run: mvn -B dependency:resolve-plugins dependency:go-offline --file pom.xml
   Build:
     runs-on: ubuntu-latest
     needs: [Deps]
